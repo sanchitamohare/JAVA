@@ -1,0 +1,16 @@
+package sum;
+import java.util.Scanner;
+public class sum {
+	public static void main(String[] arg) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter one number:");
+		int A = sc.nextInt();
+		System.out.println("Enter second number:");
+		int B = sc.nextInt();
+		
+		int C = A+B;
+		System.out.println("Addition is:" +C);
+		
+	}
+
+}
