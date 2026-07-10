@@ -1,0 +1,15 @@
+package Main.java;
+import java.util.Scanner;
+public class Main {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter a vowel");
+	char V=sc.next().charAt(0);
+	if(V=='a' || V=='e'||V=='i'||V=='o'||V=='u') {
+		System.out.println("It is an Vowel: "+V);
+	}
+	else {
+		System.out.println("Consonant");
+	}
+}
+}
