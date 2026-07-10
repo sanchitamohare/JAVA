@@ -1,0 +1,21 @@
+package calculator;
+import java.util.Scanner;
+public class calculator {
+public static void main(String[] arg) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter one number:");
+	int A = sc.nextInt();
+	System.out.println("Enter second number:");
+	int B = sc.nextInt();
+	
+	int add = A+B;
+	System.out.println("Addition:" +add);
+	int sub = A-B;
+	System.out.println("Substraction:" +sub);
+	int mult = A*B;
+	System.out.println("Multiplication" +mult);
+	int div = A/B;
+	System.out.println("Division:" +div);
+	
+}
+}
