@@ -1,0 +1,21 @@
+package number1;
+import java.util.Scanner;
+public class number1 {
+public static void main(String[] arg) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter one number:");
+	int A = sc.nextInt();
+	
+    if(A>0) {
+	System.out.println("Number is Positive " +A);
+	
+}
+    else if(A==0) {
+    	System.out.println("Number is Zero " +A);
+    
+    }
+    else {
+	System.out.println("Number is Negative " +A);
+}
+}
+}
