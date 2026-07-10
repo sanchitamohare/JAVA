@@ -1,0 +1,16 @@
+package rectangle;
+import java.util.Scanner;
+public class rectangle {
+	public static void main(String[] arg) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Length:");
+		int L = sc.nextInt();
+		System.out.println("Enter Breadth:");
+		int B = sc.nextInt();
+		
+		int A = L*B;
+		System.out.println("AREA OF RECTANGLE IS:" +A);
+		
+	}
+
+}
