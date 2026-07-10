@@ -1,0 +1,16 @@
+package basic;
+import java.util.Scanner;
+public class basic {
+public static void main(String[] arg) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter User Name:");
+	String Name = sc.next();
+	System.out.println("Enter User Branch:");
+	String Branch = sc.next();
+	System.out.println("Enter User ID:");
+	int A = sc.nextInt();
+	System.out.println("User information is:");
+	System.out.println("User Name:" +Name);
+	System.out.println("User Branch:" +Branch);
+	System.out.println("ID:" +A);
+}
