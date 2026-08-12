@@ -1,0 +1,45 @@
+package nn;
+class SharedResource{
+synchronized void printnumbers(String threadname) {
+	for(int i=1;i<5;i++){
+		System.out.println(threadname+":"+i);
+	try {
+		Thread.sleep(500);
+	}catch(InterruptedException e) {
+		System.out.println(e);
+	}
+	}
+	System.out.println();
+}
+}
+class threadclass extends Thread{
+	SharedResource resource;
+	threadclass(SharedResource resource){
+		this.resource=resource;
+	}
+	public void run() {
+		resource.printnumbers("Thread Class");
+	}
+}
+class Runnabledmo implements Runnable{
+	SharedResource resource;
+	Runnabledmo(SharedResource resource){
+		this.resource=resource;
+	}
+	public void run() {
+		resource.printnumbers("Runnable Interface");
+	}
+}
+public class abc {
+
+	public static void main(String[] args) {
+		SharedResource resource =new SharedResource();
+		threadclass t1=new threadclass(resource);
+		Runnabledmo obj=new Runnabledmo(resource);
+		Thread t2=new Thread(obj);
+		t1.start();
+		t2.start();
+
+	}
+
+}
