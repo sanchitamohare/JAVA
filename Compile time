@@ -1,0 +1,21 @@
+package nn;
+class A{
+	void Area(int n) {
+		System.out.println("Area of Square is:" +(n*n)+" units");	
+		}
+
+void Area(int l,int b) {
+	System.out.println("Area of Rectangle is:"+(l*b)+" units");
+}
+	
+}
+public class Assignment {
+
+	public static void main(String[] args) {
+           A obj= new A();
+           obj.Area(8);
+           obj.Area(12,7);
+
+	}
+
+}
