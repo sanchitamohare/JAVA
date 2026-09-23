@@ -1,0 +1,97 @@
+package nn;
+import java.util.*;
+
+class BankAccount {
+    int accNo;
+    String name;
+    double balance;
+
+    BankAccount(int accNo, String name, double balance) {
+        this.accNo = accNo;
+        this.name = name;
+        this.balance = balance;
+    }
+
+    void deposit(double amt) throws Exception {
+        if (amt <= 0)
+            throw new Exception("Invalid deposit amount!");
+        balance += amt;
+        System.out.println("Amount deposited successfully.");
+    }
+
+    void withdraw(double amt) throws Exception {
+        if (amt <= 0)
+            throw new Exception("Invalid withdrawal amount!");
+        if (amt > balance)
+            throw new Exception("Insufficient balance!");
+        balance -= amt;
+        System.out.println("Amount withdrawn successfully.");
+    }
+
+    void display() {
+        System.out.println("Account No: " + accNo);
+        System.out.println("Name: " + name);
+        System.out.println("Balance: " + balance);
+    }
+}
+
+public class ex8 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+        BankAccount a1 = null, a2 = null;
+
+        try {
+            System.out.print("Enter Account No: ");
+            int no = sc.nextInt();
+            sc.nextLine();
+
+            System.out.print("Enter Name: ");
+            String name = sc.nextLine();
+
+            System.out.print("Enter Initial Balance: ");
+            double bal = sc.nextDouble();
+
+            a1 = new BankAccount(no, name, bal);
+            System.out.println("Account created successfully!");
+
+            System.out.print("\nEnter deposit amount: ");
+            a1.deposit(sc.nextDouble());
+
+            System.out.print("Enter withdrawal amount: ");
+            a1.withdraw(sc.nextDouble());
+
+            System.out.println("\nAccount Details:");
+            a1.display();
+
+            // Fund transfer
+            System.out.print("\nEnter second account number: ");
+            int no2 = sc.nextInt();
+            sc.nextLine();
+
+            System.out.print("Enter second account name: ");
+            String name2 = sc.nextLine();
+
+            a2 = new BankAccount(no2, name2, 0);
+
+            System.out.print("Enter transfer amount: ");
+            double amt = sc.nextDouble();
+
+            a1.withdraw(amt);
+            a2.deposit(amt);
+
+            System.out.println("Fund transferred successfully!");
+
+            System.out.println("\nSender:");
+            a1.display();
+
+            System.out.println("\nReceiver:");
+            a2.display();
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+	}
+
+}
